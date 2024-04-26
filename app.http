@@ -1,0 +1,99 @@
+### API 1 - GET /todos/
+
+#### Scenario 1: Get todos with status 'TO DO'
+GET http://localhost:3000/todos/?status=TO%20DO
+
+#### Scenario 2: Get todos with priority 'HIGH'
+GET http://localhost:3000/todos/?priority=HIGH
+
+#### Scenario 3: Get todos with priority 'HIGH' and status 'IN PROGRESS'
+GET http://localhost:3000/todos/?priority=HIGH&status=IN%20PROGRESS
+
+#### Scenario 4: Search todos with 'Buy' in todo text
+GET http://localhost:3000/todos/?search_q=Buy
+
+#### Scenario 5: Get todos with category 'WORK' and status 'DONE'
+GET http://localhost:3000/todos/?category=WORK&status=DONE
+
+#### Scenario 6: Get todos with category 'HOME'
+GET http://localhost:3000/todos/?category=HOME
+
+#### Scenario 7: Get todos with category 'LEARNING' and priority 'HIGH'
+GET http://localhost:3000/todos/?category=LEARNING&priority=HIGH
+
+### API 2 - GET /todos/:todoId/
+
+#### Get todo by ID
+GET http://localhost:3000/todos/1
+
+### API 3 - GET /agenda/
+
+#### Get todos with due date '2021-12-12'
+GET http://localhost:3000/agenda/?date=2021-01-16
+
+### API 4 - POST /todos/
+
+#### Create a new todo
+POST http://localhost:3000/todos/
+Content-Type: application/json
+
+{
+    "id": 4,
+    "todo": "New Todo",
+    "priority": "HIGH",
+    "status": "TO DO",
+    "category": "WORK",
+    "dueDate": "2024-04-30"
+}
+
+### API 5 - PUT /todos/:todoId/
+
+#### Update todo status to 'DONE'
+PUT http://localhost:3000/todos/1
+Content-Type: application/json
+
+{
+    "status": "DONE"
+}
+
+#### Update todo priority to 'HIGH'
+PUT http://localhost:3000/todos/1
+Content-Type: application/json
+
+{
+    "priority": "HIGH"
+}
+### Scenario 3 - Update Todo
+PUT http://localhost:3000/todos/3
+Content-Type: application/json
+
+{
+    "todo": "Clean the garden (Updated)"
+}
+
+
+
+### Scenario 4 - Update Todos with Category 'LEARNING'
+PUT http://localhost:3000/todos/:todoId/
+Content-Type: application/json
+
+{
+    "category": "LEARNING"
+}
+
+
+
+### Scenario 5 - Update Todos with Due Date '2021-01-12'
+PUT http://localhost:3000/todos/:todoId/
+Content-Type: application/json
+
+{
+    "dueDate": "2021-01-12"
+}
+
+
+
+### API 6 - DELETE /todos/:todoId/
+
+#### Delete todo by ID
+DELETE http://localhost:3000/todos/1
